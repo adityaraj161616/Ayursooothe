@@ -1,0 +1,113 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Definition of the design system with white & herbal green palette */
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 20 83 45;
+
+    --card: 255 255 255;
+    --card-foreground: 20 83 45;
+
+    --popover: 255 255 255;
+    --popover-foreground: 20 83 45;
+
+    --primary: 5 150 105;
+    --primary-foreground: 255 255 255;
+
+    --secondary: 240 253 244;
+    --secondary-foreground: 20 83 45;
+
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
+
+    --accent: 16 185 129;
+    --accent-foreground: 255 255 255;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 229 231 235;
+    --input: 229 231 235;
+    --ring: 5 150 105;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 248 250 252;
+    --sidebar-foreground: 20 83 45;
+    --sidebar-primary: 5 150 105;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 16 185 129;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 229 231 235;
+    --sidebar-ring: 5 150 105;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-white text-stone-700 font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-emerald-900;
+    font-family: 'Playfair Display', serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .floating-cta {
+    @apply fixed bottom-6 right-6 z-50 bg-emerald-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-emerald-700 transition-all duration-300 hover:scale-105;
+  }
+}
+
+/* Enhanced animations */
+@keyframes word-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-word-reveal {
+  animation: word-reveal 0.8s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
